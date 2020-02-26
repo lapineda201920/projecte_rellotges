@@ -10,20 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
+Route::get('/home', 'HomeController@getHome')->name('home');
 // Pantalla principal
-Route::get('/', function () {
+Route::get('/', 'HomeController@getHome');
 
-    return view('home');
-    //return "Aquí caldria retornar la vista INDEX";
-});
-
-
+/*
 // Login usuari
 Route::get('/login', function () {
 
     return view('auth.login');
-    //return "Aquí caldria retornar la vista LOGIN";
 });
 
 
@@ -31,37 +27,26 @@ Route::get('/login', function () {
 Route::get('/logout', function () {
 
     return view('home');
-    //return "Aquí caldria retornar la vista LOGOUT";
 });
+*/
 
 
-// Llistat rellotges
-Route::get('/catalog', function () {
-
-    return view('catalog.index');
-    //return "Aquí caldria retornar la vista CATALOG";
-});
 
 
-// Vista detall rellotge
-Route::get('/catalog/show/{id}', function ($id) {
+Route::group(['middleware' => 'auth'], function(){
 
-    return view('catalog.show', array('id'=>$id));
-    //return "Aquí caldria retornar la vista SHOW amb id" . $id;
-});
+	// Llistat rellotges
+	Route::get('/catalog', 'catalog\CatalogController@getIndex');
 
 
-// Afegir rellotge
-Route::get('/catalog/create', function () {
-
-    return view('catalog.create');
-    //return "Aquí caldria retornar la vista CREATE";
-});
+	// Vista detall rellotge
+	Route::get('/catalog/show/{id}', 'catalog\CatalogController@getShow');
 
 
-// Modificar rellotge
-Route::get('/catalog/edit/{id}', function ($id) {
+	// Afegir rellotge
+	Route::get('/catalog/create', 'catalog\CatalogController@getCreate');
 
-    return view('catalog.edit', array('id'=>$id));
-    //return "Aquí caldria retornar la vista EDIT";
+
+	// Modificar rellotge
+	Route::get('/catalog/edit/{id}', 'catalog\CatalogController@getEdit');
 });
