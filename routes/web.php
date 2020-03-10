@@ -49,4 +49,12 @@ Route::group(['middleware' => 'auth'], function(){
 
 	// Modificar rellotge
 	Route::get('/catalog/edit/{id}', 'catalog\CatalogController@getEdit');
+
+
+	// ----
+	Route::post('/catalog/create', 'catalog\CatalogController@postCreate');
+
+
+	// ----
+	Route::put('/catalog/edit/{id}', 'catalog\CatalogController@putEdit');
 });

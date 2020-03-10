@@ -37,4 +37,36 @@ class CatalogController extends Controller
 
         return view('catalog.edit', ['id'=>$rellotges->toArray()]);
     }
+
+    // -----
+    public function postCreate (Request $request){
+
+        $rellotge = new Rellotges();
+
+        $rellotge->title = $request->input('title');
+        $rellotge->year = $request->input('year');
+        $rellotge->color = $request->input('color');
+        $rellotge->imagen = $request->input('imagen');
+        $rellotge->synopsis = $request->input('synopsis');
+
+        $rellotge->save();
+
+        return redirect()->action('catalog\CatalogController@getIndex');
+    }
+
+    // -----
+    public function putEdit (Request $request, $id){
+
+        $rellotge = Rellotges::find($id);
+
+        $rellotge->title = $request->input('title');
+        $rellotge->year = $request->input('year');
+        $rellotge->color = $request->input('color');
+        $rellotge->imagen = $request->input('imagen');
+        $rellotge->synopsis = $request->input('synopsis');
+
+        $rellotge->save();
+
+        return redirect()->action('catalog\CatalogController@getIndex');
+    }
 }

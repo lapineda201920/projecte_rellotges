@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('content')    
+@section('content')
 
 <div class="row" style="margin-top:40px">
    <div class="offset-md-3 col-md-6">
@@ -20,17 +20,17 @@
 
 	            <div class="form-group">
 	               <label for="year">Any</label>
-	               <input type="text" name="title" id="title" class="form-control">
+	               <input type="text" name="year" id="title" class="form-control">
 	            </div>
 
 	            <div class="form-group">
 	               <label for="color">Color</label>
-	               <input type="text" name="title" id="title" class="form-control">
+	               <input type="text" name="color" id="title" class="form-control">
 	            </div>
 
 	            <div class="form-group">
 	               <label for="imagen">Link Imatge</label>
-	               <input type="text" name="title" id="title" class="form-control">
+	               <input type="text" name="imagen" id="title" class="form-control">
 	            </div>
 
 	            <div class="form-group">
