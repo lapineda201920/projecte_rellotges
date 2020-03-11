@@ -1,13 +1,17 @@
 
-<h1 align="center">Projecte Rellotges by lapineda201920</h1>
+<h1 align="center" style="text-decoration:underline">Projecte Rellotges by lapineda201920</h1>
 
 ## Pasos a seguir pel correcte funcionament
 
-0. Descarreguem tot el projecte a local.
-- 
+0. Instal·lem el Composer, Git i llibreries PHP.
+- sudo apt-get install composer git php7.0 php7.0-mbstring php-sqlite3
+
 
 1. Descarreguem tot el projecte a local.
-- 
+-  git clone https://github.com/el_meu_user/el_meu_projecte_de_laravel
+-  cd el_meu_projecte_de_laravel
+- composer install
+
 
 2. Descarreguem el Docker:
 - Primer de tot, anem a la consola i fem un update:
@@ -22,26 +26,12 @@
 - Tornem a fer un update:
 	- sudo apt-get update
 
-- :
+- Comprobem que ens hem descarregat la última versió de Docker:
 	- apt-cache policy docker-engine
 
-- :
+- Instal·lem el Docker:
 	- sudo apt-get install -y docker-engine
 
-- :
-	- docker docker-subcommand --help
-
-- :
-	- sudo docker pull ubuntu
-
-- :
-	- sudo docker run -it ubuntu
-
-	- apt-get update
-
-	- apt-get install -y nodejs --fix-missing
-
-	- exit
 
 3. Descarreguem el Docker-Compose:
 - Primer de tot, instal·lem el curl:
@@ -53,6 +43,7 @@
 - Per acabar, instal·lem el curl:
 	- sudo chmod +x /usr/local/bin/docker-compose
 
+
 4. Emprem el .yml:
 - Agafem el document docker-compose.yml, el qual està a la carpeta arrel, i el possem a la carpeta on tenim instal·lat el docker-compose.
 
@@ -62,3 +53,27 @@
 - A continuació, obrim el docker-compose:
 	- sudo docker-compose up
 
+
+5. Modifiquem el document .env:
+- Anem a la carpeta del projecte, i obrim el terminal. Executem la seguent comanda:
+	- gedit .env
+
+- Se'ns obrirà el editor de text. Hem de buscar en el document ua part semblant a la següent, i la modifiquem tal qual està ara:
+	DB_CONNECTION=mysql
+	DB_HOST=172.18.0.1
+	DB_PORT=3306
+	DB_DATABASE=projecte_rellotge
+	DB_USERNAME=projecte_rellotge
+	DB_PASSWORD=projecte_rellotge
+
+
+6. Migrar DB
+- php artisan migrate
+
+
+7. Posem en marxa:
+- php artisan serve
+
+
+8. Visitar:
+- http://localhost:8000
