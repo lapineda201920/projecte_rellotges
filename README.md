@@ -68,12 +68,15 @@
 
 
 6. Migrar DB
-- php artisan migrate
+- Per a migrar la base de dades, fem la següent comanda:
+	- php artisan migrate
 
 
 7. Posem en marxa:
-- php artisan serve
+- Per a posar en marxa, fem la següent comanda:
+	- php artisan serve
 
 
 8. Visitar:
-- http://localhost:8000
+- Per a visitar la base de dades, fem la següent comanda:
+	- http://localhost:8000
