@@ -59,12 +59,12 @@
 	- gedit .env
 
 - Se'ns obrirà el editor de text. Hem de buscar en el document ua part semblant a la següent, i la modifiquem tal qual està ara:
-	*DB_CONNECTION=mysql
-	*DB_HOST=172.18.0.1
-	*DB_PORT=3306
-	*DB_DATABASE=projecte_rellotge
-	*DB_USERNAME=projecte_rellotge
-	*DB_PASSWORD=projecte_rellotge
+	* DB_CONNECTION=mysql
+	* DB_HOST=172.18.0.1
+	* DB_PORT=3306
+	* DB_DATABASE=projecte_rellotge
+	* DB_USERNAME=projecte_rellotge
+	* DB_PASSWORD=projecte_rellotge
 
 
 6. Migrar DB
