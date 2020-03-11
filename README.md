@@ -4,14 +4,14 @@
 ## Pasos a seguir pel correcte funcionament
 
 0. Instal·lem el Composer, Git i llibreries PHP.
-- sudo apt-get install composer git php7.0 php7.0-mbstring php-sqlite3
+- sudo apt-get install composer php7.2 git php-mbstring php-dom
 
 
 1. Descarreguem tot el projecte a local.
--  git clone https://github.com/el_meu_user/el_meu_projecte_de_laravel
--  cd el_meu_projecte_de_laravel
-- composer install
-
+- Anem  a la carpeta on volem deixar la insta·lació. Fem:
+	-  git clone https://github.com/lapineda201920/projecte_rellotges.git
+	-  cd projecte_rellotges
+	- composer install
 
 2. Descarreguem el Docker:
 - Primer de tot, anem a la consola i fem un update:
@@ -45,38 +45,35 @@
 
 
 4. Emprem el .yml:
-- Agafem el document docker-compose.yml, el qual està a la carpeta arrel, i el possem a la carpeta on tenim instal·lat el docker-compose.
-
-- Un cop fet això, fem un:
-	- sudo docker-compose up -d
-
-- A continuació, obrim el docker-compose:
+- Obrim el docker-compose:
 	- sudo docker-compose up
 
 
 5. Modifiquem el document .env:
-- Anem a la carpeta del projecte, i obrim el terminal. Executem la seguent comanda:
-	- gedit .env
+- Anem a la carpeta del projecte, i activem l'opció de veure els documents ocults. Agafem el document '.env.example', el copièm i l'engantxem. El document engatxat li canviem el nom per '.env'.
 
-- Se'ns obrirà el editor de text. Hem de buscar en el document ua part semblant a la següent, i la modifiquem tal qual està ara:
+- Obrim el document amb el editor de text. Hem de buscar en el document una part semblant a la següent, i la modifiquem tal qual està ara:
 	* DB_CONNECTION=mysql
 	* DB_HOST=172.18.0.1
 	* DB_PORT=3306
 	* DB_DATABASE=projecte_rellotge
-	* DB_USERNAME=projecte_rellotge
-	* DB_PASSWORD=projecte_rellotge
+	* DB_USERNAME=root
+	* DB_PASSWORD=claveroot
 
 
 6. Migrar DB
+- Per a migrar la base de dades, anem al localhost ( http://localhost:8000 ) amb el usuari: root i contrasenya: claveroot. Creem una BD.
+
 - Per a migrar la base de dades, fem la següent comanda:
 	- php artisan migrate
-
+	- php artisan db:seed
 
 7. Posem en marxa:
 - Per a posar en marxa, fem la següent comanda:
+	- php artisan key:generate
 	- php artisan serve
 
+- Anem al nostre cercador (Chrome, Firefox, ...)  i possem al buscador d’adalt:
+	- localhost:8000
 
-8. Visitar:
-- Per a visitar la base de dades, fem la següent comanda:
-	- http://localhost:8000
+- Si accedim amb usuari: adria@gmail.com i contrasenya: adria, podrem accedir-hi.
