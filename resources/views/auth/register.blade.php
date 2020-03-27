@@ -61,6 +61,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">Captcha</label>
+
+                            <div class="col-md-6 offset-md-4">
+                                {!! NoCaptcha::renderJs() !!}
+                                {!! NoCaptcha::display() !!}
+                                <span class="text-danger" >{{ $errors->first('g-recaptcha-response') }}</span>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
