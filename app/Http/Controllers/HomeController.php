@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function getHome()
     {
-        return redirect()->action('catalog\CatalogController@getIndex');
+        //return redirect()->action('catalog\CatalogController@getIndex');
+        return view('home');
     }
 }

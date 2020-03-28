@@ -67,7 +67,9 @@
                             <span class="text-danger" >{{ $errors->first('g-recaptcha-response') }}</span>
                         </div>
 
-
+                        <a href="{{ route('social.oauth', 'github') }}" class="btn btn-default btn-block">
+                            Login with Github
+                        </a>
                     </form>
                 </div>
             </div>

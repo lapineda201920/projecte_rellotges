@@ -65,6 +65,9 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{ route('social.oauth', 'github') }}" class="btn btn-default btn-block">
+                        Login with Github
+                    </a>
                 </div>
             </div>
         </div>

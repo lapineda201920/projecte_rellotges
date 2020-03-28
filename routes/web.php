@@ -15,6 +15,9 @@ Route::get('/home', 'HomeController@getHome')->name('home');
 // Pantalla principal
 Route::get('/', 'HomeController@getHome');
 
+Route::get('oauth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
+Route::get('oauth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+
 /*
 // Login usuari
 Route::get('/login', function () {
