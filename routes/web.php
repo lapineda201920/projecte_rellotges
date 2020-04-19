@@ -18,6 +18,7 @@ Route::get('/', 'HomeController@getHome');
 Route::get('oauth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
 Route::get('oauth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
+
 /*
 // Login usuari
 Route::get('/login', function () {
@@ -59,5 +60,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 
 	// ----
-	Route::put('/catalog/edit/{id}', 'catalog\CatalogController@putEdit');
+    Route::put('/catalog/edit/{id}', 'catalog\CatalogController@putEdit');
+
+    Route::get('/settings', 'SettingsController@index')->name('settings');
 });

@@ -23,6 +23,7 @@
                 </ul>
 
                 <ul class="navbar-nav navbar-right">
+                    <li><a class="nav-link" href="{{url('/settings') }}">Settings</a></li>
                     <li class="nav-item">
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}
